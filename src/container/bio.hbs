@@ -1,0 +1,75 @@
+<div>
+    <main>
+        <section>
+            <h1>{{name}}</h1>
+            <hr>
+
+            <h3>Born:</h3>
+            <p>{{birthdate}}<br>{{birthplace}}</p>
+
+            <h3>Died:</h3>
+            <p>{{deathdate}}<br>{{deathplace}}</p>
+
+            <h3>Nationality:</h3>
+            <p>{{nationality}}</p>
+
+            <h3>Occupation:</h3>
+            <p>{{occupation}}</p>
+
+            <h3>Known for:</h3>
+            <p>{{known_for}}</p>
+
+            <h3>Education: </h3>
+            <ul>
+                {{#each education}}
+                <li>{{> bio title=degree description=institution}}</li>
+                {{/each}}
+            </ul>
+
+            <h3>Notable publications: </h3>
+            <ul>
+                {{#each notable_publications}}
+                <li>{{> bio description=publisher}}</li>
+                {{/each}}
+            </ul>
+
+            <h3>Partners: </h3>
+            <ul>
+                {{#each partners}}
+                <li>{{> bio title=name description=relationship year=years}}</li>
+                {{/each}}
+            </ul>
+
+            <h3>Awards: </h3>
+            <ul>
+                {{#each awards}}
+                <li>{{> bio}}</li>
+                {{/each}}
+            </ul>
+
+            <h3>Influences:</h3>{{influences}}
+            <h3>Influenced:</h3>{{influenced}}
+
+            <h3>Quotes: </h3>
+            <ul>
+                {{#each quotes}}
+                <li><p><q>{{this}}</q></p></li>
+                {{/each}}
+            </ul>
+
+            <h3>Major discoveries: </h3>
+            <ul>
+                {{#each major_discoveries}}
+                <li>{{> bio}}</li>
+                {{/each}}
+            </ul>
+
+            <h3>Contributions: </h3>
+            <ul>
+                {{#with contributions}}
+                <li>{{> bio}}</li>
+                {{/with}}
+            </ul>
+        </section>
+    </main>
+</div>
