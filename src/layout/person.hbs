@@ -1,0 +1,27 @@
+{{!--
+Це леяут по замовчюванню, котрий вже містить базову структуру HTML документа
+І котрий обгортає код container файлів для будь-яких ендпоїнтів
+--}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Resume</title>
+        <meta charset='utf-8' />
+        <link href='css/index.css' rel='stylesheet' />
+    </head>
+    
+    {{#with person}}
+        <header>
+            <div><h1>{{name}}</h1></div>
+            <div><em>{{age}} years old. {{gender}}</em></div>
+            <br>
+            <div>
+                <address>{{address.zip}}, {{address.country}}, {{address.state}}, {{address.city}}, {{address.street}}</address>
+            </div>
+            <br>
+            <hr>
+        </header>
+    {{/with}}
+
+    {{{body }}}
+</html>
