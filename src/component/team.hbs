@@ -1,0 +1,35 @@
+<div>
+    {{#if team_name}}
+        <h4>{{team_name}}</h4>
+    {{else}}
+        <h4>Team Members:</h4>
+    {{/if}}
+
+    {{#if team_leader}}
+        <div>
+            {{team_leader.name}}. {{team_leader.title}}. 
+            <address>{{team_leader.email}}</address>
+        </div>
+        <br>
+    {{/if}}
+
+    <ul>
+        {{#each team_members}}
+        <li>
+            {{name}}. {{title}}.
+            {{#if skills}}<br>Skills: {{#each skills}}{{this}}, {{/each}}{{/if}}
+            <address>{{email}}</address>
+            <br>
+            <div>
+            <ul>
+                {{#each projects}}
+                <li>
+                    {{> project}}
+                </li>
+                {{/each}}
+            </ul>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>
