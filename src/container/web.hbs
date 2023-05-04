@@ -1,0 +1,21 @@
+<div>
+    {{#with web}}
+    <main>
+        <section>
+            <ul>
+                {{#each languages}}
+                <li>
+                    <h3><abbr title={{version}}>{{name}}</abbr></h3>
+                    <p>{{description}}</p>
+                    
+                    {{>languages page=elements}}
+                    {{>languages page=properties}}
+                    {{>languages page=functions}}                    
+                </li>
+                <br><hr>
+                {{/each}}
+            </ul>
+        </section>
+    </main>
+    {{/with}}
+</div>
