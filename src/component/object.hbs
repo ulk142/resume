@@ -1,0 +1,13 @@
+<ul>
+    {{#each page}}
+<li>
+    <p>
+        <cite><b>{{name}}.</b></cite> 
+        {{#if type}}{{type}}. {{/if}}
+        {{#if artist}}{{artist}}. {{/if}}
+        {{#if description}}{{description}}. {{/if}}
+        {{#if audio_guide}}Enable audio guide.{{/if}}
+    </p>
+</li>
+{{/each}}
+</ul>
