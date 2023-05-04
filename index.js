@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-const app = require('.')
+const app = require('./app')
 const debug = require('debug')(
   'template-express-live-reload:server',
 )
