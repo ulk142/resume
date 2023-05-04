@@ -1,0 +1,21 @@
+<ul>
+    {{#each page}}
+    <li>
+        <p>
+            {{#if name}}
+                <strong>
+                    <dfn title="{{#if type}}Type: {{type}}{{/if}}">{{name}}</dfn> - 
+                </strong>
+            {{/if}}
+            
+            {{#if value}}<strong><dfn>{{value}}</dfn> - </strong>{{/if}}
+
+            {{#if description}}{{description}}{{/if}}
+
+            {{> languages page=attributes}}
+            {{> languages page=values}}
+            {{> languages page=parameters}}
+        </p>
+    </li>
+    {{/each}}
+</ul>
