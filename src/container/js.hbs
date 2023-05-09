@@ -1,0 +1,33 @@
+<div>
+    <main>
+        <section>
+            <h1>
+                {{name}}<br>
+                <small class="text-body-secondary">Founder: {{history.founder}} in {{history.year}}</small>
+            </h1>
+            <p class="lead">{{description}}</p>
+            <hr>
+            
+            {{>h3-list page=types header="has 8 Datatypes"}}    
+
+            <h3>{{name}} Syntax</h3>
+            {{#with syntax}}
+                <p><mark>Variables: </mark><code>{{variables}}</code></p>
+                <p><mark>Functions: </mark><code>{{functions}}</code></p>
+                <p><mark>Conditionals: </mark><code>{{conditionals}}</code></p>
+                <p><mark>Loops: </mark><code>{{loops}}</code></p>
+                <p><mark>Classes: </mark><code>{{classes}}</code></p>
+            {{/with}}
+            <br><hr>           
+            
+            {{>h3-list page=features header="Features"}}
+            {{>h3-list page=libraries header="Libraries"}}
+            {{>h3-list page=tools header="Tools"}}
+
+            <h3>{{name}} Community</h3>
+            {{#each community}}
+                <li><strong><cite>{{name}} - </cite></strong>{{type}}</li>
+            {{/each}}
+        </section>
+    </main>
+</div>
