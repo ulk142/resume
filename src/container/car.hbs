@@ -1,0 +1,45 @@
+<div>
+    <main>
+        <section>
+            <h1>
+                {{make}} {{model}}. {{year}} year.<br>
+                <small class="text-body-secondary">Color: {{color}}</small>
+            </h1>
+            <hr>
+
+            <div class="border" >
+                {{>title h2 data="Features"}}      
+                {{#with features}}
+                    {{>title h3 data="Interior"}}
+                    {{#with interior}}
+                        {{>car titleSize=h4 titleName="Seats" topPage=seats}}<br>
+                        {{>car titleSize=h4 titleName="Dashboard" topPage=dashboard}}<br>
+                        {{>car titleSize=h4 titleName="Audio" topPage=audio}}<br>
+                    {{/with}}
+
+                    {{>title h3 data="Exterior"}}
+                    {{#with exterior}}
+                        {{>car titleSize=h4 titleName="Wheels" topPage=wheels}}<br>
+                        {{>car titleSize=h4 titleName="Headlights" topPage=headlights}}<br>
+                        {{>car titleSize=h4 titleName="Sunroof" topPage=sunroof}}<br>
+                    {{/with}}
+
+                    {{>title h3 data="Safety"}}
+                    {{#with safety}}
+                        {{>car car titleSize=h4 titleName="Airbags" topPage=airbags}}<br>
+                        {{>car titleSize=h4 titleName="Assistance" topPage=assistance}}<br>
+                    {{/with}}
+                {{/with}}
+                <br>
+            </div>
+
+             <div class="border">
+            {{>car titleSize=h2 titleName="Engine" topPage=engine}} </div>              
+
+            <div class="border">
+            {{>car titleSize=h2 titleName="Fuel economy" topPage=fuel_economy}}</div>
+
+            <div class="border">
+            {{>car titleSize=h2 titleName="Price" topPage=price}}</div>
+    </main>
+</div>
