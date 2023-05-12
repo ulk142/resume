@@ -1,0 +1,29 @@
+<div>
+    {{#if page}}
+        <hr>
+        {{>title h3=true data=title}}
+        <ul>
+            {{#each page}}
+                <li>                    
+                    <div>
+                        <strong>{{name}}</strong>
+                        [Id: {{id}}]. 
+                        {{#if gender}}
+                            <i>{{gender}}. {{age}} year old. </i>
+                        {{/if}}
+                        {{#if description}}
+                            <i>{{description}}. </i>
+                        {{/if}}
+                    </div>
+                    <br>
+                    {{>facebook title='Friends:' page=friends}}
+                    {{>facebook title='Mutual friends:'  page=mutual_friends}}
+                    
+                    {{>facebook title='Groups:'  page=groups}}
+                    {{>facebook title='Members:'  page=members}}
+                </li>
+                <br>
+            {{/each}}
+        </ul>
+    {{/if}}
+</div>
