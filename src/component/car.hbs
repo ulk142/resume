@@ -1,0 +1,55 @@
+{{>title titleSize data=titleName}}
+
+
+{{#with topPage}}
+    {{#if material}}<li><strong>Material - </strong>{{material}}</li>{{/if}}
+    {{#if color}}<li><strong>Color - </strong>{{color}}</li>{{/if}}    
+    {{#if heated}}<li><strong>Heated - </strong>{{heated}}</li>{{/if}}
+    {{#if ventilated}}<li><strong>Ventilated - </strong>{{ventilated}}</li>{{/if}}
+    {{#if type}}<li><strong>Type - </strong>{{type}}</li>{{/if}}
+    {{#if size}}<li><strong>Size - </strong>{{size}}</li>{{/if}}
+    {{#if resolution}}<li><strong>Resolution - </strong>{{resolution}}</li>{{/if}}
+    {{#if touchscreen}}<li><strong>Touchscreen - </strong>{{touchscreen}}</li>{{/if}}    
+    {{#if system}}<li><strong>System - </strong>{{system}}</li>{{/if}}
+    {{#if speakers}}<li><strong>Speakers - </strong>{{speakers}}</li>{{/if}}
+    {{#if subwoofer}}<li><strong>Subwoofer - </strong>{{subwoofer}}</li>{{/if}}
+    {{#if bluetooth}}<li><strong>Bluetooth - </strong>{{bluetooth}}</li>{{/if}}
+    {{#if USB}}<li><strong>USB - </strong>{{USB}}</li>{{/if}}
+    {{#if brightness}}<li><strong>Brightness - </strong>{{brightness}}</li>{{/if}}
+    {{#if automatic}}<li><strong>Automatic - </strong>{{automatic}}</li>{{/if}}
+    {{#if front}}<li><strong>front - </strong>{{front}}</li>{{/if}}
+    {{#if side}}<li><strong>side - </strong>{{side}}</li>{{/if}}
+    {{#if knee}}<li><strong>knee - </strong>{{knee}}</li>{{/if}}
+    {{#if rear}}<li><strong>rear - </strong>{{rear}}</li>{{/if}}
+    {{#if blind_spot_monitoring}}<li><strong>blind_spot_monitoring - </strong>{{blind_spot_monitoring}}</li>{{/if}}
+    {{#if rear_cross_traffic_alert}}<li><strong>rear_cross_traffic_alert - </strong>{{rear_cross_traffic_alert}}</li>{{/if}}
+    {{#if lane_departure_warning}}<li><strong>lane_departure_warning - </strong>{{lane_departure_warning}}</li>{{/if}}
+    {{#if adaptive_cruise_control}}<li><strong>adaptive_cruise_control - </strong>{{adaptive_cruise_control}}</li>{{/if}}
+    {{#if collision_warning}}<li><strong>collision_warning - </strong>{{collision_warning}}</li>{{/if}}
+    {{#if displacement}}<li><strong>displacement - </strong>{{displacement}}</li>{{/if}}
+    {{#if horsepower}}<li><strong>horsepower - </strong>{{horsepower}}</li>{{/if}}
+    {{#if torque}}<li><strong>torque - </strong>{{torque}}</li>{{/if}}
+    {{#if gears}}<li><strong>gears - </strong>{{gears}}</li>{{/if}}
+    {{#if city}}<li><strong>city - </strong>{{city}}</li>{{/if}}
+    {{#if highway}}<li><strong>highway - </strong>{{highway}}</li>{{/if}}
+    {{#if combined}}<li><strong>combined - </strong>{{combined}}</li>{{/if}}
+    {{#if base}}<li><strong>base - </strong>{{base}}</li>{{/if}}
+    {{#if destination}}<li><strong>destination - </strong>{{destination}}</li>{{/if}}
+    {{#if navigation}}<li><strong>navigation - </strong>{{navigation}}</li>{{/if}}
+    {{#if moonroof}}<li><strong>moonroof - </strong>{{moonroof}}</li>{{/if}}
+    {{#if premium_paint}}<li><strong>premium_paint - </strong>{{premium_paint}}</li>{{/if}}
+    {{#if total}}<li><strong>total - </strong>{{total}}</li>{{/if}}
+    <br>
+    
+    {{#if display}}
+        {{>car titleSize=h5 titleName="Display" topPage=display}}<br>
+    {{/if}}
+
+    {{#if transmission}}
+        {{>car titleSize=h5 titleName="Transmission" topPage=transmission}}<br>
+    {{/if}}
+
+    {{#if options}}
+        {{>car titleSize=h5 titleName="Options" topPage=options}}<br>
+    {{/if}}
+{{/with}}
