@@ -38,20 +38,7 @@
 						</div>
 					{{/each}}
 				</div>
-
-				{{#each cards}}
-					<div class='col-4'>
-						<div class='card'>
-							<img class="card-img-top" src={{image}}>
-							<div class='card-body'>
-                            	<h5 class="card-title">{{title}}</h2>
-								{{#if isHot}}<span class='badge rounded-pill bg-warning'>HOT!</span>{{/if}}
-								{{#if isNew}}<span class='badge rounded-pill bg-primary'>New</span>{{/if}}
-								<p>{{description}}</p>
-							</div>
-						</div>
-					</div>
-				{{/each}}
+				{{>shopcard}}
 			{{/with}}
 		</section>
 		<hr>
@@ -73,19 +60,6 @@
 		</section>
 		<hr>
 
-		<section class='mt-5 mb-5'>
-			<div class='card text-center text-white bg-success'>
-				<div class='card-body p-2'>
-				{{#with service}}   
-					<h2 class="mb-3">{{title}}</h2>                              
-					<p class="my-2">{{description}}</p>
-					{{#each buttons}}
-						<a type="button" class="btn btn-primary" href={{link}}>{{text}}</a>
-					{{/each}}
-				{{/with}}
-				</div>
-			</div>			
-		</section>
-		<hr>
+		{{>shopaction}}
 	</main>
 </div>

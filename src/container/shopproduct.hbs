@@ -1,0 +1,112 @@
+<div>
+	<main>	
+        <section class='m-3'>
+            <ol class="breadcrumb">
+                {{#each breadcrumb}}
+                    {{#if @last}}
+                        <li class="breadcrumb-item">{{name}}</li>
+                    {{else}}                    
+                        <li class="breadcrumb-item">
+                            <a href={{url}}>{{name}}</a>
+                        </li>
+                    {{/if}}
+                {{/each}}
+            </ol>
+        </section>
+
+        {{#with productData}}
+        	<section class='row g-2 mt-4 mb-4'>			
+				<div class='card col-6'>
+					<img class="card-img-top" src={{img}}>
+					<div class='card-body'>
+						{{#with info}}
+							<h5 class="card-title">{{title}}</h2>                        
+							<p>{{about}}</p>
+							<h3>{{price}}</h3>
+							{{#each category}}  
+								{{#if isHot}}<span class='badge rounded-pill bg-warning'>{{name}}</span>{{/if}}
+								{{#if isNew}}<span class='badge rounded-pill bg-primary'>{{name}}</span>{{/if}}
+								{{#if isBonus}}<span class='badge rounded-pill bg-info'>{{name}}</span>{{/if}}
+							{{/each}}
+						{{/with}}							
+					</div>
+				</div>
+				
+				<div class='col-5 row g-3'>
+					<div>
+						{{#with item}}
+							<table class="table">
+								<thead>
+									<tr>
+										{{#each head}}									
+											<th scope="col">{{this}}</th>									
+										{{/each}}
+									</tr>
+								</thead>
+								<tbody>
+									{{#each body}}	
+										<tr>
+											{{#each this}}																		
+												{{#if @first}}
+													<th scope="col">{{this}}</th>	
+												{{else}}	
+													<td>{{this}}</td>
+												{{/if}}	
+											{{/each}}										
+										</tr>						
+									{{/each}}
+								</tbody>
+							</table>
+						{{/with}}
+					</div>
+
+					<div>					
+						{{#with param}}
+							<div class="card">
+								<div class="card-header">
+									{{title}}
+								</div>
+								<ul class="list-group list-group-flush">
+									{{#each list}}
+										<li class="list-group-item">{{this}}</li>
+									{{/each}}
+								</ul>
+							</div>
+						{{/with}}
+					</div>				
+
+					<div>
+						{{#with alert}}
+							{{#if isError}}
+								<div class="alert alert-danger" role="alert">
+									{{text}}
+								</div>
+							{{/if}}
+						{{/with}}
+					</div>
+				</div>
+			</section>
+
+			<div class="card">
+				<div>
+					{{#each actionList}}
+						{{#if isWarning}}<span class='btn btn-warning'>{{name}}</span>{{/if}}
+						{{#if isError}}<span class='btn btn-outline-danger'>{{name}}</span>{{/if}}
+						{{#if isSuccess}}<span class='btn btn-success'>{{name}}</span>{{/if}}
+						{{#if isGood}}<span class='btn btn-outline-success'>{{name}}</span>{{/if}}								
+					{{/each}}
+				</div>
+			</div>
+		{{/with}} 
+
+		<section class='row g-2 mt-5 mb-5'>
+			{{#with goodsOtherBlock}}
+                <h3 class='text-center'>{{title}}</h3>
+				{{>shopcard}}
+			{{/with}}
+		</section>
+		<hr>
+
+		{{>shopaction}}
+	</main>
+</div>
