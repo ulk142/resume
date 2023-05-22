@@ -2,21 +2,7 @@
 	<main>
 		<section class='row g-2 mt-5 mb-5'>
 			{{#with newsBlock}}
-				<h3 class='text-center'>{{title}}</h3>
-				{{#each cards}}
-					<div class='col-3'>
-						<div class='card text-bg-secondary'>
-							<div class='card-header'>
-								{{title}}
-								{{#if isNew}}<span class='badge rounded-pill bg-success'>New</span>{{/if}}
-								{{#if isTop}}<span class='badge rounded-pill bg-danger'>Top</span>{{/if}}
-							</div>
-							<div class='card-body'>
-								<p>{{description}}</p>
-							</div>
-						</div>
-					</div>
-				{{/each}}
+				{{>shoppost}}
 			{{/with}}
 		</section>
 		<hr>
