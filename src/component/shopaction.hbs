@@ -1,0 +1,14 @@
+<section class='mt-5 mb-5'>
+    <div class='card text-center text-white bg-success'>
+        <div class='card-body p-2'>
+        {{#with service}}   
+            <h2 class="mb-3">{{title}}</h2>                              
+            <p class="my-2">{{description}}</p>
+            {{#each buttons}}
+                <a type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-title={{rel}} href={{link}}>{{text}}</a>
+            {{/each}}
+        {{/with}}
+        </div>
+    </div>			
+</section>
+<hr>
