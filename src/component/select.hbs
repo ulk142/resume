@@ -1,0 +1,27 @@
+{{#with page}}
+    <label class="form-label">{{label}}</label>        
+        {{#if form-lg}}
+			<select class="form-select-lg">				
+				<option selected>{{placeholder}}</option>
+				{{#each options}}
+					<option value={{value}}>{{text}}</option>
+				{{/each}}							
+			</select>
+        {{else}}
+            {{#if form-sm}}
+				<select class="form-select-sm">				
+                    <option selected>{{placeholder}}</option>
+                    {{#each options}}
+                        <option value={{value}}>{{text}}</option>
+                    {{/each}}							
+                </select>
+            {{else}}
+                <select class="form-select">				
+                    <option selected>{{placeholder}}</option>
+                    {{#each options}}
+                        <option value={{value}}>{{text}}</option>
+                    {{/each}}							
+                </select>
+            {{/if}}
+        {{/if}}
+{{/with}}
