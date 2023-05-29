@@ -1,0 +1,176 @@
+<div class='row p-1'>
+	<main>	
+		<div class="mt-5 mb-5">
+			<h1>{{header}}</h1>
+		</div>
+
+        <div class='row g-2'>
+            <div class="col-8">
+				{{#with contacts_data}} 
+                    <h3>{{title}}</h3>
+                    {{#each buttons}}
+                        {{#if isPrimary}}<span class='btn btn-warning'>{{text}}</span>{{/if}}
+                        {{#if isOutline}}<span class='btn btn-outline-warning'>{{text}}</span>{{/if}}
+                    {{/each}}
+
+                    <div class='row g-2'>						
+						{{#with form.input}}
+                            <div class='col-6 p-2'>{{>imput page=surname}}</div>
+                            <div class='col-6 p-2'>{{>imput page=name}}</div>
+                            <div class='col-6 p-2'>{{>imput page=phone}}</div>
+                            <div class='col-6 p-2'>{{>imput page=email}}</div>
+                        {{/with}}						
+                        <hr>                                              
+
+                        {{#each form.switch}}
+                            <div class="form-check form-switch mb-3">
+                                {{#if isActive}}
+                                    <input class="form-check-input" type="checkbox" role="switch" checked>
+                                {{else}}
+                                    <input class="form-check-input" type="checkbox" role="switch">
+                                {{/if}}                            
+                                <label class="form-check-label">{{text}}</label>
+                            </div>
+                        {{/each}}
+						<hr>
+                    </div>
+            	{{/with}}
+
+				{{#with delivery}}
+                    <h3>{{title}}</h3>
+					<div class="card mt-2 mb-2">
+						<div class="row g-2 p-1">
+							{{#each select}}
+								<div class='col-6'>{{>select page=this}}</div>		
+							{{/each}}		
+						</div>
+					</div>
+
+					<div class='row g-2'>
+						{{#each delivery_type}}
+							<div class="form-check">
+								<input name="delivery_type" class="form-check-input" type="radio">
+								<label class="form-check-label">
+									{{type}}
+								</label>
+							</div>							
+						{{/each}}					
+						<hr>
+					
+						{{#with payment}}
+                    		<h3>{{title}}</h3>
+							{{#each list}}
+								<div class="form-check">
+									<input name="payment" class="form-check-input" type="radio">
+									<label class="form-check-label">
+										{{type}}
+									</label>
+        							<div class="form-text">{{description}}</div>
+								</div>
+							{{/each}}							
+						{{/with}}					
+						<hr>
+										
+						{{#with contact}}
+                    		<h3>{{title}}</h3>	
+                            <div class='col-6 p-2'>{{>imput page=surname}}</div>
+                            <div class='col-6 p-2'>{{>imput page=name}}</div>
+                            <div class='col-6 p-2'>{{>imput page=phone}}</div>
+                            <div class='col-6 p-2'>{{>imput page=email}}</div>
+                        {{/with}}						
+                        <hr>
+
+						{{>imput page=coment}}
+						<hr>					
+					</div>
+            	{{/with}}					
+				
+				{{#with coupon}}
+					<h3>{{title}}</h3>
+					<div class='p-2'>{{>select page=select.availabel_coupon form-lg=true}}</div>
+					<div class='p-2'>{{>select page=select.friend_coupon form-sm=true}}</div>
+					<div class='p-2'>{{>imput page=add.friend form-lg=true}}</div>
+					<div class='p-2'>{{>imput page=add.colleague form-sm=true}}</div>
+				{{/with}}	
+				<hr>
+				
+				{{#with quiz}}
+					<h3>{{title}}</h3>
+					<div class='p-2'>
+						{{#with preference}}
+							<div>{{title}}</div>
+							{{#each options}}
+								<div class="form-check">
+									<input name="options" class="form-check-input" type="radio">
+									<label class="form-check-label">
+										{{this}}
+									</label>
+								</div>							
+							{{/each}}
+						{{/with}}
+					</div>
+					
+					<div class='p-2'>{{>imput page=your_expirience}}</div>
+					<div class='p-2'>{{>select page=purchase_frequency form-lg=true}}</div>
+					<div class='p-2'>{{>select page=purchase_frequency form-lg=true}}</div>
+					
+					<div class='p-2'>
+						{{#with factors}}
+							<div>{{title}}</div>
+							{{#each options}}
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="">
+									<label class="form-check-label">
+										{{this}}
+									</label>
+								</div>							
+							{{/each}}
+						{{/with}}
+					</div>
+				{{/with}}
+				<hr>
+			</div>
+			
+            
+            <div class="col-4">
+				<div class="card p-2 mb-2">
+					{{#each action_block}}
+						<div class="mb-2">
+						{{#if isSuccess}}<span class='btn btn-success'>{{text}}</span>{{/if}}
+						{{#if isDanger}}<span class='btn btn-danger'>{{text}}</span>{{/if}}
+						{{#if isInfo}}<span class='btn btn-info'>{{text}}</span>{{/if}}
+						</div>
+					{{/each}}
+				</div>
+            
+				<div class="card p-2">
+					{{#with total}}
+						<h3>{{title}}</h3>						
+						{{#each item_list}}
+							<div>
+								{{name}}: {{price}}
+							</div>
+						{{/each}}
+						<hr>
+						{{#each additional_info}}
+							<div>
+								{{text}}: {{value}}
+							</div>
+						{{/each}}
+						<hr>
+						<div>
+							{{total_price.text}}: {{total_price.value}}
+						</div>
+						<hr>
+						{{#each button}}
+							<div class="mb-2">
+								{{#if isPrimary}}<span class='btn btn-primary'>{{text}}</span>{{/if}}
+								{{#if isOutline}}<span class='btn btn-outline-primary'>{{text}}</span>{{/if}}
+							</div>
+						{{/each}}
+					{{/with}}
+				</div>
+            </div>
+        </div>
+	</main>
+</div>
