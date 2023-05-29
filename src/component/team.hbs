@@ -6,20 +6,22 @@
     {{/if}}
 
     {{#if team_leader}}
-        <div>
+        <div class="mb-3">
             {{team_leader.name}}. {{team_leader.title}}. 
             <address>{{team_leader.email}}</address>
         </div>
-        <br>
     {{/if}}
 
     <ul>
         {{#each team_members}}
         <li>
             {{name}}. {{title}}.
-            {{#if skills}}<br>Skills: {{#each skills}}{{this}}, {{/each}}{{/if}}
-            <address>{{email}}</address>
-            <br>
+            {{#if skills}}
+                <div class="mb-3">
+                    Skills: {{#each skills}}{{this}}, {{/each}}
+                </div>
+            {{/if}}
+            <address class="mb-3"{{email}}</address>
             <div>
             <ul>
                 {{#each projects}}

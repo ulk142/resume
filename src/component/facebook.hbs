@@ -1,11 +1,10 @@
 <div>
     {{#if page}}
-        <hr>
         {{>title h3=true data=title}}
         <ul>
             {{#each page}}
                 <li>                    
-                    <div>
+                    <div class="card m-2 p-2">
                         <strong>{{name}}</strong>
                         [Id: {{id}}]. 
                         {{#if gender}}
@@ -15,14 +14,13 @@
                             <i>{{description}}. </i>
                         {{/if}}
                     </div>
-                    <br>
+                    
                     {{>facebook title='Friends:' page=friends}}
                     {{>facebook title='Mutual friends:'  page=mutual_friends}}
                     
                     {{>facebook title='Groups:'  page=groups}}
                     {{>facebook title='Members:'  page=members}}
                 </li>
-                <br>
             {{/each}}
         </ul>
     {{/if}}

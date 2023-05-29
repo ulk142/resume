@@ -7,9 +7,9 @@
                 <ul>
                     {{#each works}}
                     <li>
-                        <div>{{position}}</div>
-                        <br>
-                        <div>
+                        <div class="col-10 mt-5 mb-3">{{position}}</div>
+                        
+                        <div class="mb-3">
                             {{duration.from}}-
                             {{#if duration.to}}
                             {{duration.to}}
@@ -17,43 +17,42 @@
                             (до цього часу)
                             {{/if}}
                         </div>
-                        <br>
-                        <div>
+                        <div class="mb-3">
                             {{#if company.url}}
                                 {{> link text=company.name href=company.url blank=true noLine=true}}
                             {{else}}
                                 <b>{{company.name}}</b>
                             {{/if}}
                         </div>
-                        <br><br>
-                        <div><strong>Projects ({{projectAmount}})</strong></div>
-                        <br>
+                        <div class="mb-3">
+                            <strong>Projects ({{projectAmount}})</strong>
 
-                        <ul>
-                            {{#each projects}}
-                            <li>
-                                <div>{{> link text=name href=url blank=true noLine=true}}</div>
-                                <br>
-                                <div><p>{{about}}</p></div>
-                                <br>
-                                <div><em>Project stacks ({{stackAmount}})</em></div>
-                                <br>
-                                {{#each stacks}}
-                                <li><div>{{name}}</div></li>
-                                <br>
+                            <ul>
+                                {{#each projects}}
+                                <li>
+                                    <div class="mb-3">{{> link text=name href=url blank=true noLine=true}}</div>
+                                    <div class="mb-3"><p>{{about}}</p></div>
+
+                                    <div class="mb-3">
+                                        <em>Project stacks ({{stackAmount}})</em>
+                                        <ul>
+                                        {{#each stacks}}
+                                            <li><div class="mb-3">{{name}}</div></li>
+                                        {{/each}}</ul>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <em>Project awards ({{awardAmount}})</em>
+                                        <ul>
+                                        {{#each awards}}
+                                            <li><div class="mb-3">{{name}}</div></li>
+                                        {{/each}}</ul>
+                                    </div>
+                                </li>
                                 {{/each}}
-                                <br>
-                                <div><em>Project awards ({{awardAmount}})</em></div>
-                                <br>
-                                {{#each awards}}
-                                <li><div>{{name}}</div></li>
-                                <br>
-                                {{/each}}
-                    </li>
-                    {{/each}}
-                </ul>
-                </li>
-                <br>
+                            </ul>
+                        </div>
+                    </li><hr>
                 {{/each}}
                 </ul>
             </div>

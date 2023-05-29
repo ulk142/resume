@@ -4,9 +4,9 @@
             <div class="nav-item col-2">
                 {{#each this}}
                     {{#if @last}}
-                        <a class='nav-link disabled' href={{link}}>{{text}}</a>
+                        <a class='nav-link disabled' href={{link}} target="_blank">{{text}} </a>
                     {{else}}
-                        <a class='nav-link' href={{link}}>{{text}}</a>
+                        <a class='nav-link' href={{link}} target="_blank">{{text}}</a>
                     {{/if}}
                 {{/each}}
             </div>

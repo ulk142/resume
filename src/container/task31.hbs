@@ -13,19 +13,18 @@
     </section>        
     <hr>
 
-    <section>
-        <h1>{{header.title}}</h1>  
+    <section class="mb-4 m-2">
+        <h1 class="m-4">{{header.title}}</h1>  
         {{#with header}}                               
             <p>{{description}}</p>
             <a type="button" class="btn btn-primary" href={{button.link}}>{{button.text}}</a>
         {{/with}}
     </section>        
-    <br><hr>
+    <hr>
 
-    <section class="row g-2">
+    <section class="row g-2 m-2">
         {{#with city}}
-            <h2>{{title}}</h2>
-            <br>
+            <h2 class="m-4">{{title}}</h2>
             {{#each cards}}
                 <div class="col-5">
                     <div class="card">                                                             
@@ -40,11 +39,10 @@
             {{/each}}
         {{/with}}
     </section>        
-    <br><hr>
+    <hr>
 
-    <section class="col-7">
-        <h2>{{winner.title}}</h2>
-        <br>
+    <section class="col-7 m-2">
+        <h2 class="m-4">{{winner.title}}</h2>
         {{#with winner.table}}
             <table class="table">
                 <thead> 
@@ -67,12 +65,11 @@
             </table>            
         {{/with}}
     </section>        
-    <br><hr>
+    <hr>
     
-    <section class="row g-2">
+    <section class="row g-2 m-2">
         {{#with gallery}}        
-            <h2>{{title}}</h2>
-            <br>
+            <h2 class="m-4">{{title}}</h2>
             {{#each cards}}
                 <div class="col-4">
                     <div class="card">                                                             
@@ -87,12 +84,11 @@
             {{/each}} 
         {{/with}}
     </section>        
-    <br><hr>
+    <hr>
     
-    <section class="row g-2">
+    <section class="row g-2 m-2">
         {{#with relaxion}}        
-            <h3 class="Display-3">{{title}}</h3>
-            <br>
+            <h3 class="Display-3 m-3">{{title}}</h3>
             {{#each cards}}
                 <div class="col-5">
                     <div class="card text-bg-secondary">                        
@@ -106,9 +102,9 @@
             {{/each}} 
         {{/with}}
     </section>        
-    <br><hr>    
+    <hr>    
 
-    <section class="row g-2">
+    <section class="row g-2 m-2">
         {{#with rest}}
             {{#each cards}}
                 <div class="col-6">
@@ -125,12 +121,11 @@
             {{/each}} 
         {{/with}}
     </section>        
-    <br><hr>
+    <hr>
 
-    <section class="row g-2">
+    <section class="row g-2 m-2">
         {{#with proposition}}        
-            <h2 class="Display-2">{{title}}</h3>
-            <br>
+            <h2 class="Display-2 m-3">{{title}}</h3>
             {{#each card}}
                 <div class="col-5">
                     <div class="card text-bg-warning">                        
@@ -144,33 +139,29 @@
             {{/each}} 
         {{/with}}
     </section>        
-    <br><hr>
+    <hr>
 
     
     <section class="row g-2">
         {{#with footer}}
-            <h5>{{title}}</h5>
-            <br>
+            <h5 class="m-3">{{title}}</h5>
             <div class="col-3">
                 {{#each navigation}}                                                       
                     <a type="button" class="btn btn-link" href={{href}}>{{text}}</a>
                 {{/each}} 
             </div>
-            <br>
             
-            <div class="col-3">
+            <div class="col-3 m-3">
                 {{#each socialMedia}}                                                       
                     <a type="button" class="btn btn-outline-dark" href={{link}}>{{name}}</a>                    
                 {{/each}} 
             </div>
-            <br>
             
-            <div class="col-4">
+            <div class="col-4 m-3">
                 {{#each partners}}                                                       
                     <a type="button" class="btn btn-outline-info" href={{link}}>{{name}}</a>
                 {{/each}} 
-            </div> 
-            <br>           
+            </div>         
         {{/with}}
     </section>        
     <hr>

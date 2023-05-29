@@ -1,53 +1,60 @@
 <div>
-    <main>
+    <main class="p-2">
         {{#with heading}}    
-            <div class="card"> 
+            <div class="card mb-3"> 
                 <div class="card-body"> 
                     {{#with main}}    
-                        <div class="card"> 
+                        <div class="card mb-3"> 
                             <div class="card-body"> 
                                 <h1>{{title}}</h1>                            
                                 <p>{{text}}</p>
-                                <button type="button" class="btn btn-primary">{{button_text.solid}}</button>
-                                <br><br>
-                                <button type="button" class="btn btn-outline-primary">{{button_text.outline}}</button>
+                                <div class="mb-3 mt-3">
+                                    <button type="button" class="btn btn-primary">{{button_text.solid}}</button>
+                                </div>
+                                <div class="mb-3 mt-3">
+                                    <button type="button" class="btn btn-outline-primary">{{button_text.outline}}</button>
+                                </div>                                
                             </div>
                         </div>
                     {{/with}}
-                    <br>
                     {{#with second}}    
-                        <div class="card"> 
+                        <div class="card mb-3"> 
                             <div class="card-body"> 
                                 <h2>{{title}}</h2>
                                 <p>{{text}}</p>
-                                <button type="button" class="btn btn-secondary">{{button_text.solid}}</button>
-                                <br><br>
-                                <button type="button" class="btn btn-outline-secondary">{{button_text.outline}}</button>
+                                <div class="mb-3 mt-3">
+                                    <button type="button" class="btn btn-secondary">{{button_text.solid}}</button>
+                                </div>
+                                <div class="mb-3 mt-3">
+                                    <button type="button" class="btn btn-outline-secondary">{{button_text.outline}}</button>
+                                </div>                                
                             </div>
                         </div>
                     {{/with}}
-                    <br>
                     {{#with subblock}}    
-                        <div class="card"> 
+                        <div class="card mb-3"> 
                             <div class="card-body"> 
                                 <h3>{{title}}</h3>
                                 <p>{{text}}</p>
-                                <button type="button" class="btn btn-dark">{{button_text.solid}}</button>
-                                <br><br>
-                                <button type="button" class="btn btn-outline-dark">{{button_text.outline}}</button>
+                                <div class="mb-3 mt-3">
+                                    <button type="button" class="btn btn-dark">{{button_text.solid}}</button>
+                                </div>
+                                <div class="mb-3 mt-3">
+                                    <button type="button" class="btn btn-outline-dark">{{button_text.outline}}</button>
+                                </div>
                             </div>
                         </div>
                     {{/with}}
                 </div>
             </div>
         {{/with}}
-        <br>
+        
         {{#with nested_display}}
-            <div class="card"> 
+            <div class="card mb-3"> 
                 <div class="card-body"> 
                     <h1 class="display-1">{{title}}</h1>
                     {{#with children_display}}    
-                        <div class="card"> 
+                        <div class="card mb-3"> 
                             <div class="card-body"> 
                                 <h4 class="display-4">{{title}}</h4>
                                 <p>{{text}}</p>
@@ -55,20 +62,18 @@
                             </div>
                         </div>                    
                     {{/with}}
-                    <br>
-                    <h6>{{header_text}}</h6><br>
+                    <h6 class="mb-3">{{header_text}}</h6>
                     <button type="button" class="btn btn-info">{{button.text}}</button>
                 </div>
             </div>
         {{/with}}
-        <br>
+
         {{#with paragraph}}
-            <div class="card"> 
+            <div class="card mb-3"> 
                 <div class="card-body">                     
-                    <p class="text-uppercase">{{title}}</p><br>
-                    <p class="text-lowercase">{{text}}</p><br>
-                    <a href={{button.url}} class="btn btn-link" >{{button.text}}</a>
-                    <br><br>
+                    <p class="text-uppercase mb-3">{{title}}</p>
+                    <p class="text-lowercase mb-3">{{text}}</p>
+                    <a href={{button.url}} class="btn btn-link mb-3" >{{button.text}}</a>
                     <div class="card"> 
                         <div class="card-body">                     
                             <ul>

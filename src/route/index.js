@@ -29,7 +29,9 @@ var footer = {
 }
 // ================================================================
 router.get('/', function (req, res) {
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index'
+  })
 })
 // ================================================================
 router.get('/summary', function (req, res) {
@@ -112,7 +114,6 @@ router.get('/education', function (req, res) {
     footer,
   })
 })
-
 // ================================================================
 router.get('/work', function (req, res) {
   res.render('work', {
@@ -159,7 +160,6 @@ router.get('/work', function (req, res) {
     footer,
   })
 })
-
 // ================================================================
 router.get('/person', function (req, res) {
   res.render('person', {
@@ -257,7 +257,6 @@ router.get('/person', function (req, res) {
     },
   })
 })
-
 // ================================================================
 router.get('/bio', function (req, res) {
   res.render('bio', {
@@ -353,7 +352,6 @@ router.get('/bio', function (req, res) {
     },
   })
 })
-
 // ================================================================
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
@@ -439,7 +437,6 @@ router.get('/program', function (req, res) {
     },
   })
 })
-
 // ================================================================
 router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
@@ -890,7 +887,6 @@ router.get('/task22', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
-
 // ================================================================
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -1066,11 +1062,7 @@ router.get('/car', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
-
 // ================================================================
-
-// router.get Створює нам один ентпоїнт
-
 router.get('/mac', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -1158,9 +1150,7 @@ router.get('/mac', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
-
 // ================================================================
-
 router.get('/facebook', function (req, res) {
   res.render('facebook', {
     layout: "basic",
@@ -1314,7 +1304,6 @@ router.get('/facebook', function (req, res) {
     ],
   })
 })
-
 // ================================================================
 // router.get Створює нам один ентпоїнт
 router.get('/task21', function (req, res) {
@@ -1386,7 +1375,6 @@ router.get('/task21', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
-
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -1895,7 +1883,6 @@ router.get('/shopproduct', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
-
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -3682,7 +3669,6 @@ router.get('/shopcatalog', function (req, res) {
       ],
     ],
   })
-  //                  ↑↑ сюди вводимо JSON дані
 })
 // ================================================================
 // Підключаємо роутер до бек-енду

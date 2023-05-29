@@ -1,25 +1,28 @@
-{{>title titleSize data=titleName}}
+<div class="card mb-2 p-2">
+    {{>title titleSize data=titleName}}
 
-{{#with topPage}}
+    {{#with topPage}}
 
-    {{#if brand}}<li><strong>brand - </strong>{{brand}}</li>{{/if}}
-    {{#if model}}<li><strong>model - </strong>{{model}}</li>{{/if}}    
-    {{#if speed}}<li><strong>speed - </strong>{{speed}}</li>{{/if}}
-    {{#if cores}}<li><strong>cores - </strong>{{cores}}</li>{{/if}}
-    {{#if type}}<li><strong>type - </strong>{{type}}</li>{{/if}}
-    {{#if size}}<li><strong>size - </strong>{{size}}</li>{{/if}}
-    {{#if resolution}}<li><strong>resolution - </strong>{{resolution}}</li>{{/if}}
-    {{#if speed}}<li><strong>speed - </strong>{{speed}}</li>{{/if}}    
-    {{#if technology}}<li><strong>technology - </strong>{{technology}}</li>{{/if}}
-    {{#if color_space}}<li><strong>color_space - </strong>{{color_space}}</li>{{/if}}
-    {{#if brightness}}<li><strong>brightness - </strong>{{brightness}}</li>{{/if}}
-    {{#if refresh_rate}}<li><strong>refresh_rate - </strong>{{refresh_rate}}</li>{{/if}}
-    {{#if memory}}<li><strong>memory - </strong>{{memory}}</li>{{/if}}
-    {{#if count}}<li><strong>count - </strong>{{count}}</li>{{/if}}
-    {{#if capacity}}<li><strong>capacity - </strong>{{capacity}}</li>{{/if}}
-    {{#if life}}<li><strong>life - </strong>{{life}}</li>{{/if}}
-    {{#if height}}<li><strong>height - </strong>{{height}}</li>{{/if}}
-    {{#if width}}<li><strong>width - </strong>{{width}}</li>{{/if}}
-    {{#if depth}}<li><strong>depth - </strong>{{depth}}</li>{{/if}}
-    <br>
-{{/with}}
+        <div>
+            {{#if brand}}<li><strong>brand - </strong>{{brand}}</li>{{/if}}
+            {{#if model}}<li><strong>model - </strong>{{model}}</li>{{/if}}    
+            {{#if speed}}<li><strong>speed - </strong>{{speed}}</li>{{/if}}
+            {{#if cores}}<li><strong>cores - </strong>{{cores}}</li>{{/if}}
+            {{#if type}}<li><strong>type - </strong>{{type}}</li>{{/if}}
+            {{#if size}}<li><strong>size - </strong>{{size}}</li>{{/if}}
+            {{#if resolution}}<li><strong>resolution - </strong>{{resolution}}</li>{{/if}}
+            {{#if speed}}<li><strong>speed - </strong>{{speed}}</li>{{/if}}    
+            {{#if technology}}<li><strong>technology - </strong>{{technology}}</li>{{/if}}
+            {{#if color_space}}<li><strong>color_space - </strong>{{color_space}}</li>{{/if}}
+            {{#if brightness}}<li><strong>brightness - </strong>{{brightness}}</li>{{/if}}
+            {{#if refresh_rate}}<li><strong>refresh_rate - </strong>{{refresh_rate}}</li>{{/if}}
+            {{#if memory}}<li><strong>memory - </strong>{{memory}}</li>{{/if}}
+            {{#if count}}<li><strong>count - </strong>{{count}}</li>{{/if}}
+            {{#if capacity}}<li><strong>capacity - </strong>{{capacity}}</li>{{/if}}
+            {{#if life}}<li><strong>life - </strong>{{life}}</li>{{/if}}
+            {{#if height}}<li><strong>height - </strong>{{height}}</li>{{/if}}
+            {{#if width}}<li><strong>width - </strong>{{width}}</li>{{/if}}
+            {{#if depth}}<li><strong>depth - </strong>{{depth}}</li>{{/if}}
+        </div>
+    {{/with}}
+</div>
