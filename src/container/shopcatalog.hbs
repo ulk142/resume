@@ -1,0 +1,62 @@
+<div class='row p-1'>
+	<main>
+        <div class="mt-5 mb-5">
+            <div class='row g-2'>
+                {{>breadcrumb}}
+                <h1>{{header}}</h1>
+                {{#each sortBlock}}
+                    <div class="btn-group col-3 mt-3 mb-3">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{placeholder}}
+                        </button>
+                        <ul class="dropdown-menu">
+                            {{#each options}}
+                                <li><a class="dropdown-item" href={{value}}>{{text}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                {{/each}}
+                
+                <div class="card col-4 p-3">
+                    {{#with filterBlock}}                
+                        <div>{{sellers.title}}</div>
+                        {{#each sellers.list}}
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <label class="form-check-label">{{value}}</label>
+                            </div>
+                        {{/each}}
+                        <hr>
+
+                        {{>checkbox page=brands}}
+                        <hr>
+                        
+                        {{#with price}}
+                            <div>{{title}}</div>
+                            <input type="text" class="form-control" placeholder={{range.from}}>
+                            <input type="text" class="form-control" placeholder={{range.to}}>
+                            <div><a type="button" class="btn btn-outline-secondary" href={{button.link}}>{{button.text}}</a></div>	
+                        {{/with}}	
+                        <hr>
+
+                        {{#each filterList}}
+                            {{>checkbox page=this}}
+                        <hr>
+                        {{/each}}
+                    {{/with}}
+                </div>
+                
+                <div class="col-8">
+                    <div class="row g-2">
+                        {{#each goodsList}}
+                            {{>catalogItem}}
+                        {{/each}}
+                    </div>
+                    
+                </div>
+
+                {{>shopaction}}
+            </div>
+        </div>
+    </main>
+</div>
