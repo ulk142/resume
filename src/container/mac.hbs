@@ -2,49 +2,52 @@
     <main>
         <section>
             <h1>
-                {{category}}. {{name}}.<br>
+                <div>{{category}}. {{name}}.</div>
                 <small class="text-body-secondary">{{description}}. {{price}}$.</small>
             </h1>
-            <hr>
 
-            <div class="border" >
-                {{>title h2 data="Features"}}      
+            <div class="card" >
+                <h2 class="text-center">Features</h2>
+
                 {{#with features}}
-                    <li>{{operating_system}}</li>
-                    <li>{{weight}}</li><br>
-
-                    {{>mac titleSize=h3 titleName="Processor" topPage=processor}}<br>
-                    {{>mac titleSize=h3 titleName="Memory" topPage=memory}}<br>
-                    {{>mac titleSize=h3 titleName="Storage" topPage=storage}}<br>
-                    {{>mac titleSize=h3 titleName="Display" topPage=display}}<br>
-                    {{>mac titleSize=h3 titleName="Graphics" topPage=graphics}}<br>
-
-                    <ul>                        
-                        {{>title h2 data="Ports"}}   
-                        {{#each ports}}
-                            <li>
-                                <strong>type - </strong>{{type}}
-                                <br>
-                                <strong>count - </strong>{{count}}
-                                <br>
-                                {{#if features}}<strong>features - </strong>{{features}}{{/if}}
-                            </li>
-                            <br>
-                        {{/each}}
-                    </ul>
+                    <div class="text-center">{{operating_system}}, {{weight}}</div>
                     
-                    {{>mac titleSize=h3 titleName="Battery" topPage=battery}}<br>
-                    {{>mac titleSize=h3 titleName="Dimensions" topPage=dimensions}}<br>
+                    <div class='row g-2'>
+                        <div class="col-4">
+                            {{>mac titleSize=h3 titleName="Processor" topPage=processor}}
+                            {{>mac titleSize=h3 titleName="Memory" topPage=memory}}
+                            {{>mac titleSize=h3 titleName="Storage" topPage=storage}}
+                        </div>
 
-                    <ul>                        
-                        {{>title h2 data="Accessories"}}   
-                        {{#each accessories}}
-                            <li>
-                                {{name}}. {{price}}$.
-                            </li>
-                            <br>
-                        {{/each}}
-                    </ul>
+                        <div class="col-4">
+                            {{>mac titleSize=h3 titleName="Display" topPage=display}}
+                            {{>mac titleSize=h3 titleName="Graphics" topPage=graphics}}
+                             <div class="card mb-2 p-2">                        
+                                {{>title h2 data="Ports"}}   
+                                {{#each ports}}
+                                    <li>
+                                        <div><strong>type - </strong>{{type}}</div>
+                                        <div><strong>count - </strong>{{count}}</div>
+                                        {{#if features}}<strong>features - </strong>{{features}}{{/if}}
+                                    </li>
+                                {{/each}}
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            {{>mac titleSize=h3 titleName="Battery" topPage=battery}}
+                            {{>mac titleSize=h3 titleName="Dimensions" topPage=dimensions}}
+
+                            <div class="card mb-2 p-2">                        
+                                {{>title h2 data="Accessories"}}   
+                                {{#each accessories}}
+                                    <li>
+                                        {{name}}. {{price}}$.
+                                    </li>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div> 
                 {{/with}}
             </div>
     </main>

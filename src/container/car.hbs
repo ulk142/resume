@@ -1,45 +1,72 @@
 <div>
     <main>
-        <section>
-            <h1>
-                {{make}} {{model}}. {{year}} year.<br>
-                <small class="text-body-secondary">Color: {{color}}</small>
-            </h1>
-            <hr>
+		<h1>
+			<div>{{make}} {{model}}. {{year}} year.</div>
+			<small class="text-body-secondary">Color: {{color}}</small>
+		</h1>
 
-            <div class="border" >
-                {{>title h2 data="Features"}}      
-                {{#with features}}
-                    {{>title h3 data="Interior"}}
-                    {{#with interior}}
-                        {{>car titleSize=h4 titleName="Seats" topPage=seats}}<br>
-                        {{>car titleSize=h4 titleName="Dashboard" topPage=dashboard}}<br>
-                        {{>car titleSize=h4 titleName="Audio" topPage=audio}}<br>
-                    {{/with}}
+		<div class="card m-2">
+			<h2 class="text-center">Features</h2>   
+			{{#with features}}
+				<div class='row g-2'>
+					<div class="col-4">
+						<div class="card mt-2 mb-2 p-2">
+							<h4 class="text-center">Interior</h4>
+							{{#with interior}}
+								{{>car titleSize=h4 titleName="Seats" topPage=seats}}
+								{{>car titleSize=h4 titleName="Dashboard" topPage=dashboard}}
+								{{>car titleSize=h4 titleName="Audio" topPage=audio}}
+							{{/with}}
+						</div>
+					</div>						
+					
+					<div class="col-4">
+						<div class="card mt-2 mb-2 p-2">
+							<h4 class="text-center">Exterior</h4>
+							{{#with exterior}}
+								{{>car titleSize=h4 titleName="Wheels" topPage=wheels}}
+								{{>car titleSize=h4 titleName="Headlights" topPage=headlights}}
+								{{>car titleSize=h4 titleName="Sunroof" topPage=sunroof}}
+							{{/with}}
+						</div>
+					</div>
+					
+					<div class="col-4">
+						<div class="card mt-2 mb-2 p-2">
+							<h4 class="text-center">Safety</h4>
+							{{#with safety}}
+								{{>car car titleSize=h4 titleName="Airbags" topPage=airbags}}
+								{{>car titleSize=h4 titleName="Assistance" topPage=assistance}}
+							{{/with}}
+						</div>
+					</div>
+				</div>
+				
+				
+			{{/with}}
+		</div>
 
-                    {{>title h3 data="Exterior"}}
-                    {{#with exterior}}
-                        {{>car titleSize=h4 titleName="Wheels" topPage=wheels}}<br>
-                        {{>car titleSize=h4 titleName="Headlights" topPage=headlights}}<br>
-                        {{>car titleSize=h4 titleName="Sunroof" topPage=sunroof}}<br>
-                    {{/with}}
-
-                    {{>title h3 data="Safety"}}
-                    {{#with safety}}
-                        {{>car car titleSize=h4 titleName="Airbags" topPage=airbags}}<br>
-                        {{>car titleSize=h4 titleName="Assistance" topPage=assistance}}<br>
-                    {{/with}}
-                {{/with}}
-                <br>
-            </div>
-
-             <div class="border">
-            {{>car titleSize=h2 titleName="Engine" topPage=engine}} </div>              
-
-            <div class="border">
-            {{>car titleSize=h2 titleName="Fuel economy" topPage=fuel_economy}}</div>
-
-            <div class="border">
-            {{>car titleSize=h2 titleName="Price" topPage=price}}</div>
+		<div class="card m-2">
+			<h2 class="text-center">Others</h2>   
+			<div class='row g-2'>
+				<div class="col-4">
+					<div class="card mt-2 mb-2 p-2">
+						{{>car titleSize=h2 titleName="Engine" topPage=engine}} 
+					</div> 	
+				</div>					
+				
+				<div class="col-4">
+					<div class="card mt-2 mb-2 p-2">
+						{{>car titleSize=h2 titleName="Fuel economy" topPage=fuel_economy}}
+					</div>
+				</div>
+				
+				<div class="col-4">
+					<div class="card mt-2 mb-2 p-2">
+						{{>car titleSize=h2 titleName="Price" topPage=price}}
+					</div>
+				</div>
+			</div>
+		</div>		            
     </main>
 </div>

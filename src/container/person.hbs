@@ -2,61 +2,64 @@
     {{#with person}}
     <main>
         <section>
-            <div>
+            <div class="m-5">
                 {{> title data="Education" big=true}}
                 <ul>
                     {{#each education}}
                     <li>
-                        <div><b>{{university}}</b></div>
-                        <br>
-                        <div><em>Degree: {{degree}}. Major: {{major}}. {{graduationYear}}.</em></div>
-                        <br>
+                        <div>
+                            <b>{{university}}</b>
+                        </div>
+                        
+                        <div>
+                            <em>Degree: {{degree}}. Major: {{major}}. {{graduationYear}}.</em>
+                        </div>                        
                     </li>
                     {{/each}}
                 </ul>
-                <br>
                 <hr>
             </div>
-            <div>
+
+            <div class="m-5">
                 {{> title data="Work Experience" big=true}}
                 <ul>
                     {{#each workExperience}}
                     <li>
                         {{> title data=title big=false}}
-                        <div>
+                        <div class="mt-3 mb-3">
                             <h3>{{company}}. {{industry}} industry. Founded in {{year_founded}}.</h3>
                         </div>
                         <div>({{startDate}}) - ({{endDate}})</div>
-                        <br>
-                        <div>
+                        
+                        <div class="mt-3 mb-3">
                             <h4>Responsibilities:</h4>
                         </div>
-                        <br>
+                        
                         <ul>
                             {{#each responsibilities}}
                             <li>
                                 <div>{{this}}</div>
-                            </li> <br>
+                            </li>
                             {{/each}}
                         </ul>
-                        <br>
-                        <div>
+                        
+                        <div class="mt-3 mb-3">
                             <h4>Employees:</h4>
                         </div>
-                        <br>
+                        
                         <ul>
                             {{#each employees}}
                             <li>
-                                <div><b>{{name}}. {{position}} of {{department}} department.</b></div> <br>                               
+                                <div><b>{{name}}. {{position}} of {{department}} department.</b></div>                             
                                 {{#each projects}}{{> project}}{{/each}}
                             </li>
-                            <br>
+                            
                             {{/each}}
                         </ul>
                     </li>
                     {{/each}}
                 </ul>
-                <br>
+                
                 <hr>
             </div>
         </section>

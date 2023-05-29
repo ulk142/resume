@@ -15,13 +15,12 @@
     
     {{#with header}}
         <header>
-            <div><h1>{{name.firstname}} {{name.lastname}}</h1></div>
-            <div><b>{{position}}</b></div>
-            <br>
-            <div><em>{{salary}}</em></div>
-            <br>
-            <div><address>{{address}}</address></div>
-            <br>
+            <div class="mt-5 mb-5">
+                <h1>{{name.firstname}} {{name.lastname}}</h1>
+            </div>
+            <div class="mb-3"><b>{{position}}</b></div>            
+            <div class="mb-3"><em>{{salary}}</em></div>            
+            <div class="mb-3"><address>{{address}}</address></div>            
             <hr>
         </header>
     {{/with}}

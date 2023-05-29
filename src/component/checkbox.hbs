@@ -1,0 +1,14 @@
+{{#with page}}
+    <div>{{title}}</div>
+    
+    {{#if input}}
+        <input type="text" class="form-control" placeholder={{input.placeholder}}>
+    {{/if}}
+    
+    {{#each options}}
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">{{value}}</label>
+        </div>
+    {{/each}}
+{{/with}}
