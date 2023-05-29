@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="row g-0 p-2">
+        <div class="col-md-2"><img class="img-fluid rounded-start" src={{image}}></div>
+
+        <div class='col-md-10'>
+            <div class='card-body'>
+            <div class="row g-0 d-flex align-items-center">
+                <div class='col-md-5 m-1'>
+                    <h5 class="card-title">{{name}}</h5>
+                    <p>{{description}}</p>
+                </div>
+
+                <div class='col-md-2 m-1'>
+                    <div>{{price.title}}</div>
+                    <h5>{{price.value}}</h5>
+                </div>
+
+                <div class="col-md-2 m-1">{{amount}}</div>
+
+                <div class="col-md-2">								
+                    {{#each buttons}}
+                        <div class="mb-2">{{#if isPrimary}}<span class='btn btn-primary'>{{text}}</span>{{/if}}</div>
+                        <div class="mb-2">{{#if isDanger}}<span class='btn btn-outline-danger'>{{text}}</span>{{/if}}</div>
+                    {{/each}}
+                </div>
+            </div></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div>
+	<main>
+		<div class="mb-5 mt-5">
+			{{#with header}}
+				<h1>{{title}}</h1>
+				<div><a type="button" class="btn btn-outline-secondary" href={{button.link}}>{{button.text}}</a></div>
+			{{/with}}
+		</div>
+		<hr>
+
+		<div class="row g-4 m-2">
+			{{#each goodsBlock}}
+				{{>cartGoodsItem}}
+
+			{{/each}}
+		</div>
+		<hr>
+
+		<div class="mb-5 mt-5">
+			{{#with total}}
+				<h3>{{title}}</h3>
+				<h2>{{amount}}</h2>
+				<p>{{delivery}}</p>
+				<div>								
+					{{#each buttons}}
+						<div class="mb-2">{{#if isSuccess}}<span class='btn btn-success'>{{text}}</span>{{/if}}</div>
+						<div class="mb-2">{{#if isOutline}}<span class='btn btn-outline-success'>{{text}}</span>{{/if}}</div>
+					{{/each}}
+				</div>
+			{{/with}}
+		</div>
+		<hr>
+
+		<section class='row g-2 mt-5 mb-5'>
+			{{#with goodsOtherBlock}}
+                <h3 class='text-center'>{{title}}</h3>
+				{{>shopcard}}
+			{{/with}}
+		</section>
+		<hr>
+
+		<section class='mt-5 mb-5'>
+			<div class='card text-white bg-secondary'>
+				<div class='card-body p-2'>
+				{{#with subscribe}}   
+					<h2 class="mb-3">{{header}}</h2>                              
+					<p class="my-2">{{description}}</p>
+					{{#each buttons}}
+						<div class="col-12 pt-2">
+							<a type="button" class="btn btn-primary" href={{link}}>{{text}}</a>
+						</div>						
+					{{/each}}
+				{{/with}}
+				</div>
+			</div>			
+		</section>
+		<hr>
+</div>
+
+</main>
+</div>
